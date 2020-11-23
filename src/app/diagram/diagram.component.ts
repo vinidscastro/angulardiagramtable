@@ -23,9 +23,7 @@ export class DiagramComponent implements OnInit {
   }
 
   getTodoList() {
-    let list = [];
     this.contentService.getTodos().subscribe(data => {
-      list = data;
       this.totalTasks = data.length;
       this.complete = data.filter(x => x.completed).length;
       this.notComplete = data.filter(x => !x.completed).length;
