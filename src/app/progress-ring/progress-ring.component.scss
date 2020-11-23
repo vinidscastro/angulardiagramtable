@@ -1,0 +1,46 @@
+div#progressRing {
+  text-align: center;
+  p {
+    margin: 20px auto;
+    color: black;
+  }
+  p.pointCounter {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #333;
+    .currentPoints {
+      &.green {
+        color: #25b51b;
+      }
+      &.red {
+        color: #dc3545;
+      }
+    }
+  }
+  .svgBox {
+    margin: auto;
+    position: relative;
+    span {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: 700;
+      font-size: 2.4em;
+    }
+    .mainSvg {
+      transform: rotate(-90deg);
+      .circlebg,
+      .circleprogress {
+        fill: none;
+      }
+      .circlebg {
+        stroke: #ccc;
+      }
+      .circleprogress {
+        // stroke: #EC7000;
+        transition: all;
+      }
+    }
+  }
+}

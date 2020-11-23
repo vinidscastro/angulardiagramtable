@@ -1,0 +1,25 @@
+<div id="progressRing" >
+  <p>{{title}}</p>
+  <div class="svgBox" [style.width]="boxSize" [style.height]="boxSize">
+    <span>{{calculatePercent(tasks, currentTasks)}}%</span>
+  <svg class="mainSvg" [attr.height]="size" [attr.width]="size"  >
+    <circle
+    [attr.r]="radius"
+    [attr.cx]="halfsize"
+    [attr.cy]="halfsize"
+    stroke-width="15"
+    class="circlebg"
+    ></circle>
+    <circle
+    [style.strokeDasharray]="circumference"
+    [style.strokeDashoffset]="dashOffset"
+    [style.stroke]="completeColor"
+    [attr.r]="radius"
+    [attr.cx]="halfsize"
+    [attr.cy]="halfsize"
+    stroke-width="15"
+    class="circleprogress"/>
+  </svg>
+  </div>
+  <p class="pointCounter"><span [ngClass]="currentTasks < tasks? 'red': 'green'"  class="currentPoints">DZ {{ currentTasks }}</span> / <span class="objectivePoints">DZ {{ tasks }}</span></p>
+</div>
